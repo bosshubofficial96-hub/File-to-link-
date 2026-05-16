@@ -25,9 +25,9 @@ def str_to_int_set(val: str) -> Set[int]:
 
 
 class Var:
-    API_ID: int = int(os.getenv("API_ID", "0"))
-    API_HASH: str = os.getenv("API_HASH", "")
-    BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
+    API_ID: int = int(os.getenv("API_ID", 27806628))
+    API_HASH: str = os.getenv("API_HASH", "25d88301e886b82826a525b7cf52e090")
+    BOT_TOKEN: str = os.getenv("BOT_TOKEN", "8896165770:AAFeao8J3-ilxUWCM9JSktuWzypTjN5u-Cw")
 
     if not all([API_ID, API_HASH, BOT_TOKEN]):
         logger.critical("Missing required Telegram API configuration")
@@ -53,7 +53,7 @@ class Var:
     if not OWNER_ID:
         logger.warning("WARNING: OWNER_ID is not set. No user will be granted owner access.")
 
-    FQDN: str = os.getenv("FQDN", "") or BIND_ADDRESS
+    FQDN: str = os.getenv("FQDN", "file-stream-4j3w.onrender.com") or BIND_ADDRESS
     HAS_SSL: bool = str_to_bool(os.getenv("HAS_SSL", "True"))
     PROTOCOL: str = "https" if HAS_SSL else "http"
     PORT_SEGMENT: str = "" if NO_PORT else f":{PORT}"
@@ -61,7 +61,7 @@ class Var:
 
     SET_COMMANDS: bool = str_to_bool(os.getenv("SET_COMMANDS", "True"))
 
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb+srv://Bosshub:JMaff0WvazwNxKky@cluster0.l0xcoc1.mongodb.net/?appName=Cluster0")
 
     if not DATABASE_URL:
         logger.critical("DATABASE_URL is required")
